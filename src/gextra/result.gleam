@@ -1,4 +1,5 @@
 import gextra/function
+import gleam/result
 
 /// Applies one of two functions depending on whether the result is Ok or Error.
 /// If the result is Ok, the `val` function is applied to the value.
@@ -117,4 +118,12 @@ pub fn use_map_both(over r: Result(a, b), err err: c) {
 
 pub fn try_map_both(over r: Result(a, b), err err: c) {
   function.pipe2(try_both, r, err)
+}
+
+pub fn use_try(a) {
+  function.pipe1(a, result.try)
+}
+
+pub fn use_map(a) {
+  function.pipe1(a, result.map)
 }
