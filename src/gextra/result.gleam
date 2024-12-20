@@ -121,9 +121,9 @@ pub fn try_map_both(over r: Result(a, b), err err: c) {
 }
 
 pub fn use_try(a) {
-  function.pipe1(a, result.try)
+  function.pipe1(result.try, a)
 }
 
 pub fn use_map(a) {
-  function.pipe1(a, result.map)
+  function.pipe1(result.map, a)
 }
